@@ -1,0 +1,7 @@
+{
+  "name": "com.example.cmd_bridge",
+  "description": "Bridges the CMD Bridge extension to cmd.exe",
+  "path": "cmd_host.bat",
+  "type": "stdio",
+  "allowed_origins": ["chrome-extension://dhjefkhidmehfbbnbbpgbkakbhfjpiel/"]
+}
