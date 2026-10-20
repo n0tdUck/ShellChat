@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "CMD Bridge",
+  "version": "1.2",
+  "description": "Runs a cmd.exe session (native messaging) in the background and lets a WebSocket chat room drive it with /cmd.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA146lfth54GTdbnsVDDPKHV5Pv+Tu6Qz1lXwBsQMB7KUVo260LvHbs9T1Kv5WdlXuEoioSuaNiIeP2AIDTuOYOO2vl+uwMG9yv0MFmYpcjkkLPIVhAqnEg8ECEgQgzL0hrlh2LUv+tf/t9p7xoZHyfZni3F8cpgReQFkMiVSDFKfAuM3aeEUsTXYdxcrb2UISslVxkdXAm5WKrzO9Ld7D8p5eWlYESQGoT3l4QSgOxVlHdrpTrzEO5yphEq+yk+niAsgmPZjm1gq1fEUO06wKg/HqGaDaXBQmV1iXrVWfsG3EC3PmGdx8Rx1PHu6DT7dHr6NlNFwbJWjbBbSCFworoQIDAQAB",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": [
+    "nativeMessaging",
+    "storage",
+    "alarms"
+  ],
+  "background": {
+    "service_worker": "background.js", "type": "module"
+  },
+  "action": {
+    "default_title": "CMD Bridge",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  }
+}

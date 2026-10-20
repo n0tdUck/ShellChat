@@ -1,0 +1,82 @@
+/* Terminal pane. Everything is scoped to #pane-terminal so it can't leak into the chat pane. */
+#pane-terminal {
+  --t-bg: #0c0c0c;
+  --t-panel: #1a1a1a;
+  --t-text: #cccccc;
+  --t-muted: #7a7a7a;
+  --t-accent: #3a96dd;
+  --t-ok: #16c60c;
+  --t-err: #e74856;
+
+  display: flex;
+  flex-direction: column;
+  background: var(--t-bg);
+  color: var(--t-text);
+  font: 14px/1.4 Consolas, "Cascadia Mono", "Courier New", monospace;
+}
+#pane-terminal[hidden] { display: none !important; }
+
+#pane-terminal .term-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  background: var(--t-panel);
+  border-bottom: 1px solid #2a2a2a;
+}
+#pane-terminal .term-status { margin-right: auto; font-size: 12px; }
+#pane-terminal .term-status::before { content: "\25CF  "; }
+#pane-terminal .term-status.on { color: var(--t-ok); }
+#pane-terminal .term-status.off { color: var(--t-err); }
+
+#pane-terminal button {
+  background: #2a2a2a;
+  color: var(--t-text);
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+#pane-terminal button:hover { border-color: var(--t-accent); }
+
+#term-output {
+  flex: 1;
+  margin: 0;
+  padding: 10px 12px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font: inherit;
+}
+#term-output .sys { color: var(--t-muted); }
+#term-output .err { color: var(--t-err); }
+#term-output .from-chat { color: #f9f1a5; }   /* commands that came from the chat room */
+
+#pane-terminal .term-remote {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #5c1f24;
+  color: #ffb3b9;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+#term-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  background: var(--t-panel);
+  border-top: 1px solid #2a2a2a;
+}
+#pane-terminal .term-prompt { color: var(--t-accent); }
+#term-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--t-text);
+  font: inherit;
+}
